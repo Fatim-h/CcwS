@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="icon" type="image/png" href="image_rmbg.png">
+  </head>
+  <body>
+    <div id="navbar-reg" class="box box-border flex flex-row h-22 shadow-lg px-4">
+     <div id="logo" class="flex-grow-[0.05] flex flex-col items-center">
+       <img class="h-20 w-30" src="image.png" alt="Logo" />
+       <h1 class="font-mono">Can't Code Will Sketch</h1>
+     </div>
+     <div id="button" class="flex-grow-[0.95] flex justify-end items-center">
+       <button onclick="verify_func()" class="w-10 p-2 bg-green-700 text-white rounded">
+         <i class="fa fa-plus"></i>
+       </button>
+     </div>
+    </div>
+    <div id="root"></div>
+
+    <div id="bottom_nav" class="fixed bottom-0 left-0 w-full flex flex-row p-4 bg-white border-t border-gray-300">
+      <div class="flex-grow-[0.5] flex flex-col items-start"><p>Updated On: 7/25/2025</p></div>
+      <div id="socials" class="flex-grow-[0.5] flex flex-col items-end">
+        <a href="https://github.com/Fatim-h" target="_blank"> <img src="github_logo.png"class="w-7 h-7" alt="GitHub Logo"/></a>
+      </div>
+    </div>
+    <script type="text/babel" src="main.js"></script>
+  </body>
+</html>

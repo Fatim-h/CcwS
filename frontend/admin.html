@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="icon" type="image/png" href="image_rmbg.png">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  </head>
+  <body>
+    <div id="navbar-reg" class="box box-border flex flex-row h-22 shadow-lg px-4">
+     <div id="logo" class="flex-grow-[0.05] flex flex-col items-center">
+       <img class="h-20 w-30" src="image.png" alt="Logo" />
+       <h1 class="font-mono">Can't Code Will Sketch</h1>
+     </div>
+     <div id="button" class="flex-grow-[0.95] flex justify-end items-center">
+       <button onclick="verify_func()" class="w-100 p-2 bg-green-700 text-white rounded">
+         <a href="index.html" class="font-mono">Return</a>
+       </button>
+     </div>
+    </div>
+
+    <div id="upload_space" class="max-w-md mx-auto bg-green-100 rounded shadow-md p-10 m-5">
+      <form id="uploadForm" enctype="multipart/form-data">
+      <label for="upload_title">Title for Upload: </label><br>
+      <input type="text" id="upload_title" name="title" required 
+      class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-600"/><br/><br/>
+    
+      <label for="upload_image">Upload Image: </label><br/>
+      <input type="file" id="upload_image" name="image" accept="image/png, image/jpeg" required /><br/><br/>
+    
+      <label for="upload_description">Upload Description: </label><br>
+      <input type="text" id="upload_description" name="description" required
+        class="w-full h-40 px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-600"/><br/><br/>
+    
+      <div class="flex flex-row">
+        <button type="submit" class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 transition flex-1/2">Upload</button>
+        <button type="reset" class="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-green-400 transition flex-1/2">Cancel</button>
+      </div>
+    </form>
+    </div>
+
+    <div id="bottom_nav" class="fixed bottom-0 left-0 w-full flex flex-row p-4 bg-white border-t border-gray-300">
+      <div class="flex-grow-[0.5] flex flex-col items-start"><p>Updated On: 7/25/2025</p></div>
+      <div id="socials" class="flex-grow-[0.5] flex flex-col items-end">
+        <a href="https://github.com/Fatim-h" target="_blank"> <img src="github_logo.png"class="w-7 h-7" alt="GitHub Logo"/></a>
+      </div>
+    </div>
+    
+    <script type="text/babel">
+      document.getElementById("uploadForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+    
+        const title = document.getElementById("upload_title").value;
+        const description = document.getElementById("upload_description").value;
+        const imageFile = document.getElementById("upload_image").files[0];
+    
+        const formData = new FormData();
+        formData.append("title", title);
+        formData.append("description", description);
+        formData.append("image", imageFile);
+    
+        try {
+          const response = await fetch("http://localhost:5000/upload", {
+            method: "POST",
+            body: formData
+          });
+    
+          const result = await response.text();
+          alert(result);
+        } catch (error) {
+          console.error("Upload failed:", error);
+          alert("Upload failed.");
+        }
+      });
+    </script>
+  </body>
+</html>
