@@ -22,5 +22,6 @@ To run this project locally:
    git clone https://github.com/Fatim-h/CcwS.git
 4. ```bash
    cd CcwS
-5. ```bash
+5. You will need to create an uploads folder,
+6.  ```bash
    node server.js
