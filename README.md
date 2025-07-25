@@ -18,6 +18,8 @@ To run this project locally:
    ```bash
    node -v
    npm -v
-3. git clone https://github.com/Fatim-h/CcwS.git
-4. cd CcwS
-5. node server.js
+3. ```bash
+   git clone https://github.com/Fatim-h/CcwS.git
+4. ```bash
+   cd CcwS
+5. ```bashnode server.js
