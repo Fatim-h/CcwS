@@ -22,4 +22,5 @@ To run this project locally:
    git clone https://github.com/Fatim-h/CcwS.git
 4. ```bash
    cd CcwS
-5. ```bashnode server.js
+5. ```bash
+   node server.js
