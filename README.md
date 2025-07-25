@@ -24,4 +24,4 @@ To run this project locally:
    cd CcwS
 5. You will need to create an uploads folder,
 6.  ```bash
-   node server.js
+    node server.js
