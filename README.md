@@ -1,7 +1,6 @@
 # CcwS
 
 A MERN Stack web app that allows a user (admin) to add images to a gallery (landing page).  
-Currently works locally and lacks the **M** (MongoDB) from the MERN stack.
 
 ## Work in Progress
 - Authentication
